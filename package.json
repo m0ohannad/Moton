@@ -5,8 +5,11 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/server.js",
-    "heroku-postbuild": "NODE_ENV=production cd client && npm install && npm run build"
+    "server": "npm run dev --prefix server",
+    "client": "npm start --prefix client",
+    "install": "npm install --prefix server && npm install --prefix client",
+    "start": "npm start --prefix server",
+    "heroku-postbuild": "npm run build --prefix client"
   },
   "author": "mohannad",
   "license": "ISC",
