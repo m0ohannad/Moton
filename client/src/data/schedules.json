@@ -1,0 +1,32 @@
+[
+    {
+        "title": "مسار تأهيل",
+        "pdf": [
+            {
+                "src": "1YEu45zXQ0g0sKdGS46qivoyKK_Ow2sqS",
+                "name": "المستوى الأول"
+            },
+            {
+                "src": "1GTAl-DRMTpJk-NjEKG75f7bpKs_4eG7j",
+                "name": "المستوى الثاني"
+            },
+            {
+                "src": "1fGpwJcuIF-sUTjrBDCZKRd7mitK7XNfv",
+                "name": "المستوى الثالث"
+            }
+        ]
+    },
+    {
+        "title": "مسار منحة",
+        "pdf": [
+            {
+                "src": "1CShDP6_Cz6KycLeBW6UZcbFG98iIPFm3",
+                "name": "المستوى الأول"
+            },
+            {
+                "src": "1imWx7KUisbqYtazyunwygoKIXNcJ44oN",
+                "name": "المستوى الثاني"
+            }
+        ]
+    }
+]

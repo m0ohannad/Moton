@@ -1,0 +1,123 @@
+/* .center {
+    margin: 0 auto;
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+*/
+.home {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+}
+
+.center {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+} 
+
+.title {
+    color: #ffffff;
+    font-size: 48px;
+    line-height: 64px;
+    text-align: center;
+}
+
+.describe {
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: -25px;
+}
+
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-box {
+    margin: 20px;
+}
+
+.login {
+    margin:  0 auto;
+    margin-top: 66px;
+    max-width: 400px;
+    height: -moz-fit-content;
+    height: fit-content;
+    box-shadow: 4px 4px 20px rgb(0 0 0 / 40%);
+    position: relative;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    padding: 35px;
+}
+
+label {
+    display: flex;
+    flex-direction: row-reverse;
+    /* direction: rtl; */
+    justify-content: space-between;
+    min-width: 100%;
+}
+
+label p {
+    margin-left: 20px;
+    direction: rtl;
+    width: 40%;
+}
+
+input {
+    margin-bottom: 20px;
+    height: 35px;
+    border-radius: 5px;
+    border: black solid 1px;
+    width: 60%;
+}
+
+.buttons {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    margin: 20px 0 -10px 0;
+}
+
+.buttons p {
+    cursor: pointer;
+}
+
+button {
+    background: #1C6E6E;
+    border-radius: 25px;
+    padding: 8px;
+    color: #ffffff;
+    margin-right: 10px;
+    outline: none;
+}
+
+.black {
+    background: #000000;
+}
+
+.red {
+    background: #ac3131;
+}
+
+.errmsg {
+    color: #ffffff;
+    background-color: #df2020;
+    border: #9e0c0c solid;
+    border-radius: 5px;
+    padding: 10px;
+}

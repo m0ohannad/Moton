@@ -1,0 +1,27 @@
+.navbar{
+    width: 100%;
+    display: inline-block;
+}
+
+.navbar-item{
+    display: flex;
+    float: right;
+    list-style-type: none;
+    padding: 15px 15px;
+}
+
+a{
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.navbar-item:not(:first-child)::after {
+    content: "|";
+    font-size: 30px;
+    font-weight: 100;
+    width: 10px;
+    position: relative;
+    top: -10px;
+    left: 18px;
+    color: #000000;
+}
