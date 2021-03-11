@@ -6,11 +6,26 @@ const UserModel = require('../models/User');
 
 const userController = require('../controllers/controller');
 
-router.post('/register', userController.regisetr);
-router.post('/login', userController.login);
-router.get('/profile', userController.profile);
-router.put('/', checkToken(), userController.edit);
-router.delete('/:id', checkToken(), userController.delete);
+router.post('/register', function (req, res, next) {
+    userController.regisetr
+});
+
+router.post('/login', function (req, res, next) {
+    userController.login
+});
+
+router.get('/profile', function (req, res, next) {
+    userController.profile
+});
+
+router.put('/', checkToken(), function (req, res) {
+    userController.edit
+});
+
+router.delete('/:id', checkToken(), function (req, res) {
+    userController.delete
+});
+
 app.get('*', (req, res) => res.send('URL not found!MMM Mohannad'));
 
 const checkToken = () => {
