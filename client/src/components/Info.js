@@ -12,8 +12,9 @@ const Info = ({ token, logout, setEdit }) => {
     const [ID, setID] = useState();
     const [name, seName] = useState();
     const [email, setEmail] = useState();
+    const [joined, setJoined] = useState('2021-03-11T14:00:00.000Z');
     const [message, setMessage] = useState();
-
+    const date = new Intl.DateTimeFormat('en-GB').format(new Date(joined));
 
     const handleSubmit = async e => {
         e.preventDefault();
@@ -37,6 +38,7 @@ const Info = ({ token, logout, setEdit }) => {
                 seName(data.user.name)
             setEmail(data.user.email)
             setID(data.user._id)
+            setJoined(data.user.joined)
         })
         .catch(error => { setMessage(error) });
 
@@ -50,6 +52,9 @@ const Info = ({ token, logout, setEdit }) => {
 
                     <h2>البريد الإلكتروني</h2>
                     <h3 className="info">{email}</h3>
+
+                    <h2>تاريخ الانضمام</h2>
+                    <h3 className="info">{date}</h3>
                     {message && <p className="errmsg" >{message}</p>}
                     <div className="buttons" >
                         <button type="submit" className="red">حذف الحساب</button>

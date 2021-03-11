@@ -6,7 +6,6 @@ import '../style/Profile.css';
 
 const Profile = ({ token, logout }) => {
     const [edit, setEdit] = useState(false);
-    const [user, setUser] = useState();
 
     return (
         <>

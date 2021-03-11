@@ -24,12 +24,12 @@ UserSchema.pre('save', function (next) {
     next();
 });
 
-// UserSchema.methods.toJSON = function() {
-//     const userObject = this.toObject();
-//     delete userObject.password;
-//     delete userObject.salt;
-//     return userObject;
-// };
+UserSchema.methods.toJSON = function() {
+    const userObject = this.toObject();
+    delete userObject.password;
+    delete userObject.salt;
+    return userObject;
+};
 
 const UserModel = mongoose.model('User', UserSchema);
 module.exports = UserModel;

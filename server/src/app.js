@@ -26,7 +26,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/user', routes);
 
 if (process.env.NODE_ENV === 'production') {
-    console.log("yes yes yes")
     app.use(express.static(path.join(__dirname, '../../client/build')));
     app.get('*', (req, res) => {
         res.sendFile(
@@ -36,7 +35,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.use((req, res, next) => {
-    //404 Not Found
     const err = new Error('Not Found');
     err.status = 404;
     next(err);

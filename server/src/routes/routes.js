@@ -5,15 +5,13 @@ const joi = require('joi');
 const { hashPassword } = require('../helper');
 const UserModel = require('../models/User');
 
-// const userController = require('../controllers/controller');
-
 const checkToken = () => {
     return async (req, res, next) => {
         try {
             const token = req.headers.token;
             if (!token) {
                 res.statusCode = 401;
-                res.send({ message: 'You have no permissions!' });
+                res.send({ message: 'ليس لديك صلاحية' });
                 return;
             }
 
@@ -22,7 +20,7 @@ const checkToken = () => {
 
             if (!user) {
                 res.statusCode = 401;
-                res.send({ message: 'You have no permissions!' });
+                res.send({ message: 'ليس لديك صلاحية' });
                 return;
             }
             req.user = user
@@ -67,9 +65,9 @@ router.post('/register', async (req, res, next) => {
 
     } catch (e) {
         if (e.code === 11000 && e.name === 'MongoError') {
-            const error = new Error(`Email address ${email} is already taken`);
-            error.status = 400
-            next(error);
+            res.send({ message: `عنوان البريد الإلكتروني ${email} مستخدم بالفعل` });
+            res.statusCode = 400;
+            next();
         } else {
             next(e);
         }
@@ -82,9 +80,9 @@ router.post('/login', async (req, res, next) => {
     const expire = process.env.JWT_EXPIRATION;
     try {
         if (!user) {
-            const err = new Error(`No User found with Email ${email}`);
-            err.status = 401;
-            next(err);
+            res.send({ message: `لم يتم العثور على مستخدم بالبريد الإلكتروني ${email}` });
+            res.statusCode = 401;
+            next();
         }
 
         if (user.password === hashPassword(password, user.salt)) {
@@ -92,18 +90,18 @@ router.post('/login', async (req, res, next) => {
             res.send({ token: token })
         } else {
             res.statusCode = 401;
-            res.send({ message: 'Password is Wrong!' });
+            res.send({ message: '! كلمة السر خاطئة' });
         }
     } catch (e) {
         next(e);
     }
 });
 
-router.get('/profile', (req, res, next) => {
+router.get('/profile', checkToken(), (req, res, next) => {
     const user = req.user
     if (!user) {
         res.statusCode = 404;
-        res.send({ message: 'User with this ID does not exist!' });
+        res.send({ message: 'لم يتم العثور على المستخدم' });
     } else res.send({ user: user })
 });
 
@@ -116,13 +114,12 @@ router.put('/', checkToken(), async (req, res) => {
     });
 });
 
-router.delete('/:id', checkToken(), (req, res) => {
+router.delete('/:id', (req, res, next) => {
     UserModel.findOneAndDelete({ "_id": req.params.id })
         .then(data => res.json(data))
         .catch(next)
 });
 
-router.get('*', (req, res) => res.send('URL not found!MMM Mohannad'));
-
+router.get('*', (req, res) => res.send('URL not found!'));
 
 module.exports = router;
