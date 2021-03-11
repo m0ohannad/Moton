@@ -6,28 +6,6 @@ const UserModel = require('../models/User');
 
 const userController = require('../controllers/controller');
 
-router.post('/register', function (req, res, next) {
-    userController.regisetr
-});
-
-router.post('/login', function (req, res, next) {
-    userController.login
-});
-
-router.get('/profile', function (req, res, next) {
-    userController.profile
-});
-
-router.put('/', checkToken(), function (req, res) {
-    userController.edit
-});
-
-router.delete('/:id', checkToken(), function (req, res) {
-    userController.delete
-});
-
-app.get('*', (req, res) => res.send('URL not found!MMM Mohannad'));
-
 const checkToken = () => {
     return async (req, res, next) => {
         try {
@@ -57,5 +35,28 @@ const checkToken = () => {
         next();
     };
 };
+
+router.post('/register', function (req, res, next) {
+    userController.regisetr
+});
+
+router.post('/login', function (req, res, next) {
+    userController.login
+});
+
+router.get('/profile', function (req, res, next) {
+    userController.profile
+});
+
+router.put('/', checkToken(), function (req, res) {
+    userController.edit
+});
+
+router.delete('/:id', checkToken(), function (req, res) {
+    userController.delete
+});
+
+app.get('*', (req, res) => res.send('URL not found!MMM Mohannad'));
+
 
 module.exports = router;
