@@ -7,7 +7,7 @@ const path = require('path');
 
 const app = express();
 
-mongoose.connect(process.env.MONGO_DB_URL, {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
