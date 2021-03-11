@@ -2,7 +2,6 @@
   "name": "moton-server",
   "version": "1.0.0",
   "description": "registration",
-  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "npm start --prefix server",
