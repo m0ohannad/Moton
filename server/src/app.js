@@ -26,6 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/user', routes);
 
 if (process.env.NODE_ENV === 'production') {
+    console.log("yes yes yes")
     app.use(express.static(path.join(__dirname, '../../client/build')));
     app.get('*', (req, res) => {
         res.sendFile(
