@@ -1,6 +1,6 @@
+const router = express.Router();
 const jwt = require('jsonwebtoken');
 const joi = require('joi');
-const { hashPassword } = require('../helper');
 const UserModel = require('../models/User');
 
 const userController = require('../controllers/controller');
@@ -10,7 +10,7 @@ router.post('/login', userController.login);
 router.get('/profile', userController.profile);
 router.put('/', checkToken(), userController.edit);
 router.delete('/:id', checkToken(), userController.delete);
-app.get('*', (req, res) => res.send('URL not found!'));
+app.get('*', (req, res) => res.send('URL not found!MMM Mohannad'));
 
 const checkToken = () => {
     return async (req, res, next) => {
