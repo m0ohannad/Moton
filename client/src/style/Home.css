@@ -99,21 +99,24 @@ button {
     margin-right: 10px;
 }
 button:hover {
-    background-color: #528689
+    background-color: #528689;
+    padding: 9px;
 }
 
 .black {
     background: #000000;
 }
 .black:hover {
-    background-color: #202020
+    background-color: #202020;
+    padding: 9px;
 }
 
 .red {
     background: #ac3131;
 }
 .red:hover {
-    background-color: #af4343
+    background-color: #af4343;
+    padding: 9px;
 }
 
 .back {

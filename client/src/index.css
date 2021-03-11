@@ -28,3 +28,19 @@ code {
 iframe.fh5-iframe {
   margin: 0;
 }
+
+.fa{
+  font-size: 48px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 5px;
+  left: 5px;
+  color: #000;
+  background-color: #27a7e5;
+  border-radius: 50px;
+  }
+  
+  .fa:hover{
+  font-size:50px;
+  color: #202020;
+  }
