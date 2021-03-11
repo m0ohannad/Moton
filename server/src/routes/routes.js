@@ -56,7 +56,7 @@ router.delete('/:id', checkToken(), function (req, res) {
     userController.delete
 });
 
-app.get('*', (req, res) => res.send('URL not found!MMM Mohannad'));
+router.get('*', (req, res) => res.send('URL not found!MMM Mohannad'));
 
 
 module.exports = router;
