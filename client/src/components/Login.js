@@ -34,6 +34,9 @@ const Login = ({ toggleRegistration, setToken }) => {
         <div className="login-box">
             <form className="login" onSubmit={handleSubmit}>
                 <div className="login-wrapper">
+                    <div className="buttons" >
+                        <p className="back" onClick={() => toggleRegistration("Home")} >x</p>
+                    </div>
                     <h1>تسجيل الدخول</h1>
                     <label>
                         <p>البريد الإلكتروني</p>
