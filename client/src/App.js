@@ -36,15 +36,15 @@ function App() {
     setRegistration("Home")
   }
 
-  if (!token) {
-    return (
-      <>
-        {registration === "Home" && <Home toggleRegistration={toggleRegistration} />}
-        {registration === "login" && <Login setToken={setToken} toggleRegistration={toggleRegistration} />}
-        {registration === "signUp" && <SignUp setToken={setToken} toggleRegistration={toggleRegistration} />}
-      </>
-    )
-  }
+//   if (!token) {
+//     return (
+//       <>
+//         {registration === "Home" && <Home toggleRegistration={toggleRegistration} />}
+//         {registration === "login" && <Login setToken={setToken} toggleRegistration={toggleRegistration} />}
+//         {registration === "signUp" && <SignUp setToken={setToken} toggleRegistration={toggleRegistration} />}
+//       </>
+//     )
+//   }
 
   return (
     <BrowserRouter>
